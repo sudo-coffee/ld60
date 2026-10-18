@@ -29,9 +29,9 @@ TODO
 
 local STAR_SCALE = 16
 
--- \ ------- \ ----------------------------------------------------------- \ --
--- | sprites | ----------------------------------------------------------- | --
--- \ ------- \ ----------------------------------------------------------- \ --
+-- \ ------ \ ------------------------------------------------------------ \ --
+-- | assets | ------------------------------------------------------------ | --
+-- \ ------ \ ------------------------------------------------------------ \ --
 
 local Sprites = {}
 Sprites.boat = love.graphics.newImage("sprite/boat.png")
@@ -41,6 +41,10 @@ Sprites.star2 = love.graphics.newImage("sprite/star2.png")
 Sprites.target = love.graphics.newImage("sprite/target.png")
 Sprites.gradient = love.graphics.newImage("sprite/gradient.png")
 Sprites.gradient3 = love.graphics.newImage("sprite/gradient3.png")
+
+local Audio = {}
+Audio.music = love.audio.newSource("audio/music.mp3", "static") 
+Audio.waves = love.audio.newSource("audio/waves.mp3", "static") 
 
 -- \ ------- \ ----------------------------------------------------------- \ --
 -- | shaders | ----------------------------------------------------------- | --
@@ -534,6 +538,11 @@ end
 local state
 
 function love.load()
+  Audio.music:setLooping(true)
+  Audio.waves:setLooping(true)
+  Audio.music:setVolume(0.9)
+  Audio.waves:setVolume(0.6)
+  love.audio.play(Audio.music, Audio.waves)
   love.window.setFullscreen(true)
   love.graphics.setDefaultFilter("nearest")
   state = newState()
