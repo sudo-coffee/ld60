@@ -49,7 +49,7 @@ NoDisplay=true' > "build/temp/squashfs-root/$TITLE.desktop"
 cp library/source/cpml/LICENSE.md build/temp/squashfs-root/license-cpml.txt
 cat "build/love/$TITLE.love" >> build/temp/squashfs-root/bin/love
 appimagetool build/temp/squashfs-root "build/linux/$TITLE-linux"
-# rm -r build/temp
+rm -r build/temp
 
 ## \ --------------------------------------------------------------------- \ ##
 ## | --------------------------------------------------------------------- | ##
