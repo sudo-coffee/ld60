@@ -48,7 +48,8 @@ NoDisplay=true' > "build/temp/squashfs-root/$TITLE.desktop"
 (cd build/temp/squashfs-root && mv license.txt license-love.txt)
 cp library/source/cpml/LICENSE.md build/temp/squashfs-root/license-cpml.txt
 cat "build/love/$TITLE.love" >> build/temp/squashfs-root/bin/love
-appimagetool build/temp/squashfs-root "build/linux/$TITLE-linux"
+appimagetool build/temp/squashfs-root "build/temp/$TITLE"
+(cd build/temp && zip "../linux/$TITLE-linux.zip" "$TITLE")
 rm -r build/temp
 
 ## \ --------------------------------------------------------------------- \ ##
