@@ -19,8 +19,8 @@ wget $(printf '%s%s' 'https://github.com/love2d/love' \
   '/releases/download/11.5/love-11.5-x86_64.AppImage') \
   -nv -O library/build/linux/love
 wget $(printf '%s%s' 'https://github.com/love2d/love' \
-  '/releases/download/11.5/love-11.5-win64.exe') \
-  -nv -O library/build/windows/love.exe
+  '/releases/download/11.5/love-11.5-win64.zip') \
+  -nv -O library/build/windows/love.zip
 chmod +x library/build/linux/love
 
 # cpml
